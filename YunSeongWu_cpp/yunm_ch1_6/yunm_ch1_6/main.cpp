@@ -38,7 +38,8 @@ int main(void)
 			all_print(data, count_member);
 			break;
 		case 5:
-			free(data);
+			if (data != NULL)
+				free(data);
 			return 0;
 			break;
 		default:
