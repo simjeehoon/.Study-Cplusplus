@@ -55,6 +55,7 @@ void establish(Account ** alloc_mem, int * count_member)
 {
 	char input_Id[100] = { 0 };
 	int id_index = 0;
+	Account * tmp = NULL;
 	if (*count_member == 0)
 	{
 		(*count_member)++;
@@ -63,7 +64,10 @@ void establish(Account ** alloc_mem, int * count_member)
 	else if (*count_member > 0)
 	{
 		(*count_member)++;
-		*alloc_mem = (Account *)realloc(*alloc_mem, sizeof(Account) * *count_member);
+		tmp = *alloc_mem;
+		*alloc_mem = (Account *)malloc(sizeof(Account) * *count_member);
+		memcpy(*alloc_mem, tmp, sizeof(Account) * *count_member);
+		free(tmp);
 	}
 	else
 	{
