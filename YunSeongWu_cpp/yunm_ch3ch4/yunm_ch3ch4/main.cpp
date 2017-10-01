@@ -47,8 +47,8 @@ int Call_Function(char * problem)
 		return_value = yunm04_2();
 	else if (strcmp(problem, "04-3-1") == 0)
 		return_value = yunm04_3_1();
-	else if (strcmp(problem, "02-4-2") == 0)
-		;
+	else if (strcmp(problem, "04-3-2") == 0)
+		return_value = yunm04_3_2();
 
 	//
 	else
