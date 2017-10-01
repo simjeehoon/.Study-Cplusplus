@@ -142,6 +142,9 @@
     <ClCompile Include="03-1.cpp" />
     <ClCompile Include="03-2-1.cpp" />
     <ClCompile Include="03-2-2.cpp" />
+    <ClCompile Include="04-1.cpp" />
+    <ClCompile Include="04-2.cpp" />
+    <ClCompile Include="04-3.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

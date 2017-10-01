@@ -41,12 +41,12 @@ int Call_Function(char * problem)
 		return_value = yunm03_2_1();
 	else if (strcmp(problem, "03-2-2") == 0)
 		return_value = yunm03_2_2();
-	else if (strcmp(problem, "02-2") == 0)
-		;
-	else if (strcmp(problem, "02-3") == 0)
-		;
-	else if (strcmp(problem, "02-4-1") == 0)
-		;
+	else if (strcmp(problem, "04-1") == 0)
+		return_value = yunm04_1();
+	else if (strcmp(problem, "04-2") == 0)
+		return_value = yunm04_2();
+	else if (strcmp(problem, "04-3-1") == 0)
+		return_value = yunm04_3_1();
 	else if (strcmp(problem, "02-4-2") == 0)
 		;
 
