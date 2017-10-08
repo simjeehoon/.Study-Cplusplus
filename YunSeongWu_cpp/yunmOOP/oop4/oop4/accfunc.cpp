@@ -13,7 +13,7 @@ Account::Account(char* id, char* name, int deposit)
 	strcpy(this->name, name);
 }
 
-Account::Account(Account &copy)
+Account::Account(const Account &copy)
 	:balance(copy.balance)
 {
 	acc_id = new char[strlen(copy.acc_id) + 1];

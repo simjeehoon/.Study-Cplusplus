@@ -12,7 +12,7 @@ private:
 	static int member_count;
 public:
 	Account(char * id, char * name, int deposit);
-	Account(Account & copy);
+	Account(const Account & copy);
 	~Account();
 	char * GetAccID();
 	int GetBalance();
