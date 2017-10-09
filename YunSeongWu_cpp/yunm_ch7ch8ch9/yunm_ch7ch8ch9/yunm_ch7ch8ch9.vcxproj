@@ -141,6 +141,9 @@
   <ItemGroup>
     <ClCompile Include="07-1-1.cpp" />
     <ClCompile Include="07-1-2.cpp" />
+    <ClCompile Include="07-2-1.cpp" />
+    <ClCompile Include="07-2-2.cpp" />
+    <ClCompile Include="08-1.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>

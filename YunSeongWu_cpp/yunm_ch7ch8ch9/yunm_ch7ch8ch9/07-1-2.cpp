@@ -13,6 +13,10 @@ public:
 		this->name = new char[strlen(name) + 1];
 		strcpy(this->name, name);
 	}
+	~MyFriendInfo()
+	{
+		delete name;
+	}
 	void ShowMyFriendInfo()
 	{
 		cout << "ÀÌ¸§: " << name << endl;
@@ -33,6 +37,11 @@ public:
 		strcpy(this->addr, addr);
 		this->phone = new char[strlen(phone) + 1];
 		strcpy(this->phone, phone);
+	}
+	~MyFriendDetailInfo()
+	{
+		delete addr;
+		delete phone;
 	}
 	void ShowMyFriendDetailInfo()
 	{
