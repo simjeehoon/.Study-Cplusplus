@@ -50,6 +50,8 @@ int Call_Function(char * problem)
 
 	else if (strcmp(problem, "11-1-1") == 0)
 		return_value = yunm11_1_1();
+	else if (strcmp(problem, "11-1-2") == 0)
+		return_value = yunm11_1_2();
 	
 	//
 	else
