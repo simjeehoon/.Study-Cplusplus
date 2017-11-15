@@ -78,18 +78,42 @@ public:
 	}
 	void exchange(Node * node1, Node* node2)
 	{
-		cur = node1->next;
-		node1->next = node2->next;
-		node2->next = cur;
+		if (node1 == node2) return;
+		if (node1->next == node2)
+		{
+			node1->next = node2->next;
+			node2->next = node1;
+			node2->prev = node1->prev;
+			node1->prev = node2;
 
-		cur = node1->prev;
-		node1->prev = node2->prev;
-		node2->prev = cur;
+			node1->next->prev = node1;
+			node2->prev->next = node2;
+		}
+		else if (node2->next == node1)
+		{
+			node2->next = node1->next;
+			node1->next = node2;
+			node1->prev = node2->prev;
+			node2->prev = node1;
 
-		node1->prev->next = node1;
-		node1->next->prev = node1;
-		node2->prev->next = node2;
-		node2->next->prev = node2;	
+			node2->next->prev = node2;
+			node1->prev->next = node1;
+		}
+		else
+		{
+			cur = node1->next;
+			node1->next = node2->next;
+			node2->next = cur;
+
+			cur = node1->prev;
+			node1->prev = node2->prev;
+			node2->prev = cur;
+
+			node1->prev->next = node1;
+			node1->next->prev = node1;
+			node2->prev->next = node2;
+			node2->next->prev = node2;
+		}
 	}
 	void show_all()
 	{
@@ -115,15 +139,14 @@ int main()
 	List list;
 	int index;
 	list.init();
+	list.insert_to_next(list.GetHead(), 106);
+	list.insert_to_next(list.GetHead(), 105);
+	list.insert_to_next(list.GetHead(), 104);
+	list.insert_to_next(list.GetHead(), 103);
+	list.insert_to_next(list.GetHead(), 102);
 	list.insert_to_next(list.GetHead(), 101);
-	list.insert_to_next(list.find_index_node(1), 102);
-	list.insert_to_next(list.find_index_node(1), 102);
-	list.insert_to_next(list.GetHead(), 100);
-	list.remove(list.find_index_node(3));
-	list.insert_to_next(list.find_index_node(list.GetCount()), 103);
-	list.insert_to_next(list.find_index_node(list.GetCount()), 104);
-	list.insert_to_next(list.find_index_node(list.GetCount()), 105);
-	list.exchange(list.find_index_node(2), list.find_index_node(5));
+	
+	list.exchange(list.find_index_node(4), list.find_index_node(3));
 	list.show_all();
 	return 0;
 }
